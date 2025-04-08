@@ -1,0 +1,174 @@
+/* src/app.css */
+
+/* --- Color Palette --- */
+:root {
+	--color-dark-bg: #2a2f36;
+	--color-light-accent: #c4a3a4;
+	--color-blue-primary: #81a3bb;
+	--color-blue-secondary: #5e809d;
+	--color-mauve-primary: #7d5361;
+	--color-blue-deep: #4f6b80;
+	--color-mauve-dark: #554349;
+	--color-pink-accent: #ae3b62; /* Use sparingly for high impact */
+	--color-blue-darker: #3e596f;
+	--color-blue-darkest: #364e5b;
+
+	/* Matching Yellow - Let's pick a slightly desaturated gold/amber */
+	--color-yellow-accent: #ffc857; /* Example: A vibrant gold */
+	/* Alternative yellows if needed:
+     * --color-yellow-soft: #f4d06f;
+     * --color-yellow-dark: #e0a42d;
+     */
+
+	--color-text-light: #f0f0f0;
+	--color-text-muted: #a0a0a0;
+	--color-text-dark: var(--color-dark-bg);
+
+	/* Font Sizes (example) */
+	--font-size-sm: 0.875rem;
+	--font-size-base: 1rem;
+	--font-size-lg: 1.125rem;
+	--font-size-xl: 1.5rem;
+	--font-size-2xl: 2rem;
+	--font-size-3xl: 2.5rem;
+
+	/* Spacing (example) */
+	--space-xs: 0.5rem;
+	--space-sm: 1rem;
+	--space-md: 1.5rem;
+	--space-lg: 2rem;
+	--space-xl: 3rem;
+	--space-2xl: 4rem;
+
+	/* Transitions */
+	--transition-speed: 300ms;
+}
+
+/* --- Global Styles & Resets --- */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px; /* Base font size */
+}
+
+body {
+	font-family: 'Poppins', sans-serif; /* Using Poppins as an example - add link in app.html */
+	background-color: var(--color-dark-bg);
+	color: var(--color-text-light);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 700; /* Bolder headings */
+	line-height: 1.2;
+	margin-bottom: var(--space-md);
+	color: var(--color-blue-primary); /* Example heading color */
+}
+
+h1 {
+	font-size: var(--font-size-3xl);
+}
+h2 {
+	font-size: var(--font-size-2xl);
+}
+h3 {
+	font-size: var(--font-size-xl);
+}
+
+p {
+	margin-bottom: var(--space-sm);
+	color: var(--color-text-light);
+}
+
+a {
+	color: var(--color-blue-primary);
+	text-decoration: none;
+	transition: color var(--transition-speed) ease;
+}
+
+a:hover,
+a:focus {
+	color: var(--color-yellow-accent);
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+/* Utility Class for Centering Content */
+.container {
+	width: 90%;
+	max-width: 1200px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: var(--space-sm);
+	padding-right: var(--space-sm);
+}
+
+/* Basic Button Style */
+.btn {
+	display: inline-block;
+	padding: var(--space-xs) var(--space-md);
+	background-color: var(--color-blue-primary);
+	color: var(--color-text-dark);
+	border: none;
+	border-radius: 4px;
+	font-weight: 600;
+	text-align: center;
+	cursor: pointer;
+	transition:
+		background-color var(--transition-speed) ease,
+		transform var(--transition-speed) ease;
+	text-decoration: none; /* Ensure links styled as buttons don't have underline */
+}
+
+.btn:hover,
+.btn:focus {
+	background-color: var(--color-yellow-accent);
+	color: var(--color-text-dark);
+	transform: translateY(-2px);
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+	background-color: var(--color-blue-secondary);
+	color: var(--color-text-light);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+	background-color: var(--color-blue-deep);
+	color: var(--color-text-light);
+}
+
+.btn-accent {
+	background-color: var(--color-pink-accent);
+	color: var(--color-text-light);
+}
+.btn-accent:hover,
+.btn-accent:focus {
+	background-color: var(--color-yellow-accent);
+	color: var(--color-text-dark);
+}
+
+section {
+	padding: var(--space-2xl) 0;
+	overflow: hidden; /* Contain animations */
+}
