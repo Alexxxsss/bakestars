@@ -1,3 +1,3 @@
 <?php
-echo "Hello from Vercel PHP!";
+echo "This is the other file!";
 ?>
