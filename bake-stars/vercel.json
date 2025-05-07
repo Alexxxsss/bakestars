@@ -2,7 +2,11 @@
     "version": 2,
     "framework": null,
     "functions": {
-        "api/index.php": { "runtime": "vercel-php@0.3.1" }
+        "api/index.php": {
+            "runtime": "vercel-php@0.3.1",
+            "memory": 256,
+            "maxDuration": 10
+        }
     },
     "routes": [
         {
@@ -10,20 +14,23 @@
             "dest": "/api/index.php"
         }
     ],
-    "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "true",
-        "APP_URL": "https://yourproductionurl.com",
-
-        "APP_CONFIG_CACHE": "/tmp/config.php",
-        "APP_EVENTS_CACHE": "/tmp/events.php",
-        "APP_PACKAGES_CACHE": "/tmp/packages.php",
-        "APP_ROUTES_CACHE": "/tmp/routes.php",
-        "APP_SERVICES_CACHE": "/tmp/services.php",
-        "VIEW_COMPILED_PATH": "/tmp",
-
-        "CACHE_DRIVER": "array",
-        "LOG_CHANNEL": "stderr",
-        "SESSION_DRIVER": "cookie"
-    }
+    "build": {
+        "env": {
+            "APP_ENV": "production",
+            "APP_DEBUG": "false",
+            "APP_URL": "https://yourproductionurl.com",
+            "APP_CONFIG_CACHE": "/tmp/config.php",
+            "APP_EVENTS_CACHE": "/tmp/events.php",
+            "APP_PACKAGES_CACHE": "/tmp/packages.php",
+            "APP_ROUTES_CACHE": "/tmp/routes.php",
+            "APP_SERVICES_CACHE": "/tmp/services.php",
+            "VIEW_COMPILED_PATH": "/tmp",
+            "CACHE_DRIVER": "array",
+            "LOG_CHANNEL": "stderr",
+            "SESSION_DRIVER": "cookie"
+        },
+        "command": "composer install --no-dev && php artisan optimize:clear && php artisan config:cache && php artisan route:cache && php artisan migrate --force && npm install && npm run build",
+        "outputDirectory": "public"
+    },
+    "public": "public"
 }
