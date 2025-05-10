@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export function Carousel() {
   return (
-    <div className="flex flex-row gap-4 w-full justify-center items-center mb-100 mt-25">        
+    <div className="flex flex-row gap-4 w-full justify-center items-center mb-100">        
         <button className="rounded-full bg-compliment w-12 flex items-center justify-center font-bold text-xl hover:scale-120 hover:text-stone-600 transition-transform-colors duration-300">&#60;</button>
             <Link href={"/"} className="shadow-lg shadow-black rounded-lg overflow-hidden hover:scale-105 transition-transform duration-300">
                 <Image
