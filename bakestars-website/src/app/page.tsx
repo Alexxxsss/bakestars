@@ -4,13 +4,16 @@ import { Carousel } from "./components/carousel";
 import { Contact } from "./components/contact";
 import logo from "./images/logo.png";
 
-import image1 from "./images/BlueberryPieGuy.png";
-import image2 from "./images/Cannjohn.png";
-import image3 from "./images/Image_Sequence.png";
-import image4 from "./images/SnowGobst.png";
-import image5 from "./images/Hones.png";
+import Game1 from "./images/PieInTheSkyImages/PieInTheSkyGame.png";
+import Game2 from "./images/AegisImages/SnowGobst.png";
+import Game3 from "./images/FearOfMartefImages/FearOfMartefGame.png";
 
-const IMAGES = [image1, image2, image3, image4, image5];
+import Logo1 from "./images/PieInTheSkyImages/PieInTheSky_Brown.png";
+import Logo2 from "./images/AegisImages/AegisUprisingBlack.png";
+import Logo3 from "./images/FearOfMartefImages/Fear_of_Martef_Bright_Red.png";
+
+const IMAGES = [Game1, Game2, Game3];
+const LOGOS = [Logo1, Logo2, Logo3];
 
 export default function Home() {
   return (
@@ -19,7 +22,7 @@ export default function Home() {
       <main className=" flex flex-col p-10 gap-8 items-center justify-center">
         <h1 className="font-bold text-4xl ">Featured Games</h1>
         <div className=" max-w-[1300px] max-h-[500px] h-full m-0-auto">
-          <Carousel imageURL={IMAGES} />
+          <Carousel imageURL={IMAGES} logoURL={LOGOS} />
         </div>
 
         <Image
