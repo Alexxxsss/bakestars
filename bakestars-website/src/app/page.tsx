@@ -5,7 +5,7 @@ import { Contact } from "./components/contact";
 import logo from "./images/logo.png";
 
 import Game1 from "./images/PieInTheSkyImages/PieInTheSkyGame.png";
-import Game2 from "./images/AegisImages/SnowGobst.png";
+import Game2 from "./images/AegisImages/AegisUprisingGame.png";
 import Game3 from "./images/FearOfMartefImages/FearOfMartefGame.png";
 
 import Logo1 from "./images/PieInTheSkyImages/PieInTheSky_Brown.png";
