@@ -1,19 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Navbar from "./components/navbar";
-import { Carousel } from "./components/carousel";
 import { Contact } from "./components/contact";
 import logo from "./images/logo.png";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import Game1 from "./images/PieInTheSkyImages/PieInTheSkyGame.png";
 import Game2 from "./images/AegisImages/AegisUprisingGame.png";
 import Game3 from "./images/FearOfMartefImages/FearOfMartefGame.png";
-
-import Logo1 from "./images/PieInTheSkyImages/PieInTheSky_Brown.png";
-import Logo2 from "./images/AegisImages/AegisUprisingBlack.png";
-import Logo3 from "./images/FearOfMartefImages/Fear_of_Martef_Bright_Red.png";
-
-const IMAGES = [Game1, Game2, Game3];
-const LOGOS = [Logo1, Logo2, Logo3];
 
 export default function Home() {
   return (
@@ -21,8 +20,27 @@ export default function Home() {
       <Navbar />
       <main className=" flex flex-col p-10 gap-8 items-center justify-center">
         <h1 className="font-bold text-4xl ">Featured Games</h1>
-        <div className=" max-w-[1300px] max-h-[500px] h-full m-0-auto">
-          <Carousel imageURL={IMAGES} logoURL={LOGOS} />
+        <div className="w-full max-w-[800px] ">
+          <Swiper
+            modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={1}
+            onSwiper={(swiper) => console.log(swiper)}
+            navigation
+            pagination={{ clickable: true }}
+            loop={true}
+            className="rounded-2xl shadow-lg shadow-black"
+          >
+            <SwiperSlide>
+              <Image alt={"Carousel Picture 1"} src={Game1} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image alt={"Carousel Picture 1"} src={Game2} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image alt={"Carousel Picture 1"} src={Game3} />
+            </SwiperSlide>
+          </Swiper>
         </div>
 
         <Image
