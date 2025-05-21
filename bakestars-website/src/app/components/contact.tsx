@@ -1,12 +1,23 @@
-
-
-export function Contact() {return (
-<div className="bg-darker-bg grid grid-cols-6 gap-4 p-10 items-center justify-center rounded-2xl shadow-lg shadow-black w-full max-w-[600px]">
-  <h1 className="col-span-6 text-center font-bold text-xl">Got questions?</h1>
-  <p className="col-span-6 text-center">Feel free to contact us at any of these</p>
-  <div className="col-span-6 flex justify-center gap-5">
-    <a href="mailto:mail@stenkaal.com" className="font-bold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ">mail@stenkaal.com</a>
-    <a target="_blank" href="https://discord.gg/6v6jFFK2vy" className="font-bold transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">Discord</a>
-  </div>
-</div>
-)}
+export function Contact() {
+  return (
+    <div className="bg-black text-pink-400 border-4 border-pink-400 rounded-lg p-6 max-w-[600px] w-full font-mono shadow-[0_0_15px_rgba(156,0,156,0.6)]">
+      <h2 className="text-center text-3xl mb-2 neon">💾 Got Questions?</h2>
+      <p className="text-center text-sm mb-4">Reach out on the network:</p>
+      <div className="flex justify-center gap-6">
+        <a
+          href="mailto:mail@stenkaal.com"
+          className="hover:text-white transition hover:scale-110"
+        >
+          📧 Email
+        </a>
+        <a
+          href="https://discord.gg/6v6jFFK2vy"
+          target="_blank"
+          className="hover:text-white transition hover:scale-110"
+        >
+          💬 Discord
+        </a>
+      </div>
+    </div>
+  );
+}
